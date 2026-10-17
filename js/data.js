@@ -6,7 +6,7 @@ window.PORTFOLIO = {
     phone: "+56961686938",
     phoneLabel: "+56 9 6168 6938",
     whatsapp: "https://wa.me/56961686938",
-    github: "",
+    github: "https://github.com/javiermirandat-ing",
     cv: { es: "cv/Javier-Miranda-CV.pdf", en: "cv/Javier-Miranda-CV-EN.pdf" }
   },
 
