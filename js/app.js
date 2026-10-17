@@ -517,9 +517,10 @@
     document.body.classList.add("locked");
     var close = qs(".modal-close", m);
     if (close) close.focus();
-    if (!fromHistory) {
-      try { history.pushState({ modal: id }, "", "#proyectos/" + id); } catch (e) { /* file:// */ }
-    }
+    try {
+      if (!fromHistory) history.pushState({ modal: id }, "", "#proyectos/" + id);
+      else if (location.hash !== "#proyectos/" + id) history.replaceState(null, "", "#proyectos/" + id);
+    } catch (e) { /* file:// */ }
     sfx.select();
   }
 
@@ -642,6 +643,7 @@
     overlay.innerHTML = '<p class="loading">' + px(t("proj.loading")) + "</p>";
     var frame = document.createElement("iframe");
     frame.title = p.name;
+    frame.className = "scaled";
     frame.setAttribute("allow", "fullscreen; clipboard-write");
     frame.src = p.demo;
     frame.addEventListener("load", function () {
@@ -652,10 +654,27 @@
       }, 1600);
     });
     screen.appendChild(frame);
+    fitDemo();
     st.started = true;
     unlock("demo");
     sfx.start();
   }
+
+  // La demo corre a 360 px de ancho, como un teléfono real, y se escala para
+  // caber en el marco: así la app no se rompe por tener una pantalla diminuta.
+  var DEMO_WIDTH = 360;
+  function fitDemo() {
+    var screen = qs("#demo-screen");
+    var frame = screen && qs("iframe", screen);
+    if (!frame) return;
+    var w = screen.clientWidth, h = screen.clientHeight;
+    if (!w || !h) return;
+    var s = w / DEMO_WIDTH;
+    frame.style.width = DEMO_WIDTH + "px";
+    frame.style.height = Math.round(h / s) + "px";
+    frame.style.transform = "scale(" + s + ")";
+  }
+  window.addEventListener("resize", fitDemo);
 
   // ---------- Copiar al portapapeles ----------
   function copyText(text, btn) {

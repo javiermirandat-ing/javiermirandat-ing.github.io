@@ -1116,6 +1116,8 @@ body.in-app .veil { opacity: 1; }
 
 .screen img, .screen iframe { width: 100%; height: 100%; border: 0; display: block; object-fit: cover; object-position: top; }
 
+.screen iframe.scaled { position: absolute; left: 0; top: 0; transform-origin: 0 0; }
+
 .monitor {
   position: relative;
   width: 100%;
