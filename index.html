@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Javier Miranda · Portafolio</title>
+  <meta name="description" content="Portafolio de Javier Miranda Tapia, Ingeniero en Informática y Telecomunicaciones: experiencia laboral, habilidades y demos jugables de sus apps y juegos.">
+  <meta name="author" content="Javier Miranda Tapia">
+  <meta name="theme-color" content="#0b0f24">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Javier Miranda · Portafolio">
+  <meta property="og:description" content="Ingeniero en Informática y Telecomunicaciones. Experiencia, habilidades y demos jugables de mis apps y juegos.">
+  <meta property="og:image" content="img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_CL">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Javier Miranda Tapia",
+    "jobTitle": "Ingeniero en Informática y Telecomunicaciones",
+    "email": "mailto:javier.mirandat.26@gmail.com",
+    "telephone": "+56961686938",
+    "address": { "@type": "PostalAddress", "addressLocality": "Valparaíso", "addressCountry": "CL" },
+    "alumniOf": "Duoc UC",
+    "knowsLanguage": ["es", "en"]
+  }
+  </script>
+</head>
+<body>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+
+  <!-- Pantalla de título -->
+  <section id="title" class="title" aria-label="Pantalla de inicio">
+    <div class="title-inner">
+      <p class="title-pre" data-i18n="title.pre">PORTAFOLIO · 2026</p>
+      <h1 class="logo"><span>JAVIER</span><span>MIRANDA</span></h1>
+      <p class="title-sub" data-i18n="title.sub">Ingeniero en Informática y Telecomunicaciones</p>
+      <button id="start" class="press-start" type="button"><span class="blink" data-i18n="title.start">PRESIONA START</span></button>
+      <div class="title-options">
+        <div class="seg" role="group" aria-label="Idioma / Language">
+          <button type="button" class="seg-btn" data-set-lang="es" data-px-static>ESPAÑOL</button>
+          <button type="button" class="seg-btn" data-set-lang="en">ENGLISH</button>
+        </div>
+        <button type="button" class="seg-btn sound-toggle" data-sound-toggle>
+          <span data-i18n="title.sound">SONIDO</span>: <b class="sound-state">NO</b>
+        </button>
+      </div>
+      <p class="title-hint" data-i18n="title.hint">Enter · Espacio · Clic</p>
+    </div>
+    <p class="title-foot">© 2026 Javier Miranda Tapia · Valparaíso, Chile</p>
+  </section>
+
+  <!-- Aplicación -->
+  <div id="app" hidden>
+    <header class="hud">
+      <div class="hud-row">
+        <button type="button" class="hud-player" data-goto="perfil" aria-label="Perfil">
+          <canvas class="hud-avatar" width="48" height="48" aria-hidden="true"></canvas>
+          <span class="hud-id">
+            <span class="hud-name">JAVIER MIRANDA</span>
+            <span class="hud-class" data-i18n="hud.class">Ing. en Informática y Telecom.</span>
+          </span>
+        </button>
+        <div class="hud-xp" aria-live="polite">
+          <div class="hud-xp-label"><span data-i18n="hud.explore">EXPLORACIÓN</span><span id="xp-count">0/5</span></div>
+          <div class="xpbar"><i id="xp-fill"></i></div>
+        </div>
+        <div class="hud-actions">
+          <a class="btn-icon btn-cv" id="hud-cv" href="cv/Javier-Miranda-CV.pdf" download><span data-icon="download"></span><span data-i18n="hud.cv">CV</span></a>
+          <button type="button" class="btn-icon" id="hud-lang" data-i18n-aria="hud.lang"><span data-icon="globe"></span><span class="lang-code">ES</span></button>
+          <button type="button" class="btn-icon" id="hud-sound" data-sound-toggle data-i18n-aria="hud.sound"><span class="snd-icon" data-icon="soundOff"></span></button>
+        </div>
+      </div>
+      <nav class="menu" role="tablist" aria-label="Secciones">
+        <button type="button" class="tab" role="tab" id="tab-perfil" aria-controls="s-perfil" data-tab="perfil"><span data-icon="user"></span><span data-i18n="nav.perfil">Perfil</span></button>
+        <button type="button" class="tab" role="tab" id="tab-habilidades" aria-controls="s-habilidades" data-tab="habilidades"><span data-icon="star"></span><span data-i18n="nav.habilidades">Habilidades</span></button>
+        <button type="button" class="tab" role="tab" id="tab-experiencia" aria-controls="s-experiencia" data-tab="experiencia"><span data-icon="briefcase"></span><span data-i18n="nav.experiencia">Experiencia</span></button>
+        <button type="button" class="tab" role="tab" id="tab-proyectos" aria-controls="s-proyectos" data-tab="proyectos"><span data-icon="pad"></span><span data-i18n="nav.proyectos">Proyectos</span></button>
+        <button type="button" class="tab" role="tab" id="tab-contacto" aria-controls="s-contacto" data-tab="contacto"><span data-icon="chat"></span><span data-i18n="nav.contacto">Contacto</span></button>
+      </nav>
+    </header>
+
+    <main class="stage">
+      <section id="s-perfil" class="panel" role="tabpanel" aria-labelledby="tab-perfil" hidden></section>
+      <section id="s-habilidades" class="panel" role="tabpanel" aria-labelledby="tab-habilidades" hidden></section>
+      <section id="s-experiencia" class="panel" role="tabpanel" aria-labelledby="tab-experiencia" hidden></section>
+      <section id="s-proyectos" class="panel" role="tabpanel" aria-labelledby="tab-proyectos" hidden></section>
+      <section id="s-contacto" class="panel" role="tabpanel" aria-labelledby="tab-contacto" hidden></section>
+    </main>
+
+    <footer class="foot">
+      <p>© 2026 Javier Miranda Tapia · <span data-i18n="footer.made">Hecho a mano con HTML, CSS y JavaScript</span></p>
+    </footer>
+  </div>
+
+  <div id="modal" class="modal" hidden></div>
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">
+      <h1>Javier Miranda Tapia</h1>
+      <p>Ingeniero en Informática y Telecomunicaciones · Valparaíso, Chile</p>
+      <p>Correo: <a href="mailto:javier.mirandat.26@gmail.com">javier.mirandat.26@gmail.com</a> · Teléfono: <a href="tel:+56961686938">+56 9 6168 6938</a></p>
+      <p><a href="cv/Javier-Miranda-CV.pdf">Descargar CV (español)</a> · <a href="cv/Javier-Miranda-CV-EN.pdf">Download CV (English)</a></p>
+      <p>Activa JavaScript para ver la versión jugable del portafolio.</p>
+    </div>
+  </noscript>
+
+  <script src="js/data.js"></script>
+  <script src="js/scene.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
