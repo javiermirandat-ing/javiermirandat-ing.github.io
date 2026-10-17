@@ -197,7 +197,7 @@
     if (code) code.textContent = state.lang === "es" ? "EN" : "ES";
     var cv = qs("#hud-cv");
     if (cv) {
-      cv.href = D.contact.cv[state.lang];
+      cv.href = D.contact.cv.main;
       cv.setAttribute("aria-label", t("perfil.cta.cv"));
       cv.setAttribute("title", t("perfil.cta.cv"));
     }
@@ -249,7 +249,7 @@
 
     var bio = '<p class="bio">' + esc(t("perfil.bio")) + "</p>" +
       '<div class="btn-row"><button class="btn" type="button" data-goto="proyectos">' + icon("right") + px(t("perfil.cta.projects")) + "</button>" +
-      '<a class="btn btn-ghost" href="' + esc(D.contact.cv[state.lang]) + '" download>' + icon("download") + px(t("perfil.cta.cv")) + "</a></div>";
+      '<a class="btn btn-ghost" href="' + esc(D.contact.cv.main) + '" download>' + icon("download") + px(t("perfil.cta.cv")) + "</a></div>";
 
     qs("#s-perfil").innerHTML = secHead("perfil.title", "perfil.sub") +
       '<div class="profile">' + card + '<div class="stack">' +
@@ -376,8 +376,8 @@
     }).join("") + "</ul>";
 
     var thanks = '<div class="thanks"><div class="trophy-big">' + icon("trophy") + '</div><p class="big">' + px(t("contact.thanks")) + "</p><p>" + esc(t("contact.thanksText")) + "</p>" +
-      '<div class="cv-buttons"><a class="btn" href="' + esc(c.cv.es) + '" download>' + icon("download") + px(t("contact.cv") + " · " + t("contact.cvEs")) + "</a>" +
-      '<a class="btn btn-ghost" href="' + esc(c.cv.en) + '" download>' + icon("download") + px(t("contact.cv") + " · " + t("contact.cvEn")) + "</a></div></div>";
+      '<div class="cv-buttons"><a class="btn" href="' + esc(c.cv.main) + '" download>' + icon("download") + px(t("contact.cvMain")) + "</a>" +
+      '<a class="btn btn-ghost" href="' + esc(c.cv.photo) + '" download>' + icon("download") + px(t("contact.cvPhoto")) + "</a></div></div>";
 
     qs("#s-contacto").innerHTML = secHead("contact.title", "contact.sub") +
       '<div class="contact-grid">' + win(t("contact.room"), "chat", list) + win(t("contact.saveTitle"), "trophy", thanks) + "</div>";

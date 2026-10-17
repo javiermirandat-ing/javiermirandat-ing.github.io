@@ -7,7 +7,8 @@ window.PORTFOLIO = {
     phoneLabel: "+56 9 6168 6938",
     whatsapp: "https://wa.me/56961686938",
     github: "https://github.com/javiermirandat-ing",
-    cv: { es: "cv/Javier-Miranda-CV.pdf", en: "cv/Javier-Miranda-CV-EN.pdf" }
+    // Los dos CV están en español: el más reciente (sin foto) y la versión con foto.
+    cv: { main: "cv/Javier-Miranda-CV.pdf", photo: "cv/Javier-Miranda-CV-con-foto.pdf" }
   },
 
   ui: {
@@ -99,8 +100,8 @@ window.PORTFOLIO = {
       "contact.copy": "Copiar",
       "contact.copied": "¡Copiado!",
       "contact.cv": "Descargar CV",
-      "contact.cvEs": "Español",
-      "contact.cvEn": "Inglés",
+      "contact.cvMain": "Descargar CV",
+      "contact.cvPhoto": "CV con foto",
       "contact.location": "Valparaíso, Chile",
       "contact.locationLabel": "Ubicación",
       "contact.waText": "Enviar un mensaje",
@@ -147,7 +148,7 @@ window.PORTFOLIO = {
       "perfil.passives": "PASSIVE SKILLS",
       "perfil.inventory": "INVENTORY",
       "perfil.cta.projects": "See my projects",
-      "perfil.cta.cv": "Download CV",
+      "perfil.cta.cv": "Download CV (Spanish)",
       "perfil.player": "PLAYER 1",
       "perfil.photoAlt": "Photo of Javier Miranda. Tap it to see it in 8-bit.",
       "skills.lv": "Lv.",
@@ -203,8 +204,8 @@ window.PORTFOLIO = {
       "contact.copy": "Copy",
       "contact.copied": "Copied!",
       "contact.cv": "Download CV",
-      "contact.cvEs": "Spanish",
-      "contact.cvEn": "English",
+      "contact.cvMain": "Download CV (Spanish)",
+      "contact.cvPhoto": "CV with photo (Spanish)",
       "contact.location": "Valparaíso, Chile",
       "contact.locationLabel": "Location",
       "contact.waText": "Send a message",
