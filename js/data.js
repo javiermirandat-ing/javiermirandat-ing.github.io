@@ -240,7 +240,7 @@ window.PORTFOLIO = {
 
   languages: [
     { level: 5, es: ["Español", "Nativo"], en: ["Spanish", "Native"] },
-    { level: 3, es: ["Inglés", "Intermedio"], en: ["English", "Intermediate"] }
+    { level: 3, es: ["Inglés", "Intermedio · certificado"], en: ["English", "Intermediate · certified"] }
   ],
 
   passives: [
@@ -315,7 +315,7 @@ window.PORTFOLIO = {
     { icon: "flag", es: "Gestión de proyectos informáticos", en: "IT project management", cert: "duoc-cert" },
     { icon: "blocks", es: "Arquitectura de software", en: "Software architecture", cert: "duoc-cert" },
     { icon: "chart", es: "Inteligencia de negocios", en: "Business intelligence", cert: "duoc-cert" },
-    { icon: "globe", es: "Certificado internacional en nivel intermedio", en: "International certificate, intermediate level", cert: "duoc-cert" }
+    { icon: "globe", es: "Certificado internacional de inglés, nivel intermedio", en: "International English certificate, intermediate level", cert: "duoc-cert" }
   ],
 
   jobs: [
@@ -441,8 +441,8 @@ window.PORTFOLIO = {
         en: "Eight certifications earned within the degree."
       },
       includes: {
-        es: ["Análisis y desarrollo de modelos de datos", "Calidad de software", "Análisis y planificación de requerimientos informáticos", "Programación de software", "Gestión de proyectos informáticos", "Arquitectura de software", "Inteligencia de negocios", "Certificado internacional en nivel intermedio"],
-        en: ["Data model analysis and development", "Software quality", "IT requirements analysis and planning", "Software programming", "IT project management", "Software architecture", "Business intelligence", "International certificate, intermediate level"]
+        es: ["Análisis y desarrollo de modelos de datos", "Calidad de software", "Análisis y planificación de requerimientos informáticos", "Programación de software", "Gestión de proyectos informáticos", "Arquitectura de software", "Inteligencia de negocios", "Certificado internacional de inglés, nivel intermedio"],
+        en: ["Data model analysis and development", "Software quality", "IT requirements analysis and planning", "Software programming", "IT project management", "Software architecture", "Business intelligence", "International English certificate, intermediate level"]
       }
     },
     {
