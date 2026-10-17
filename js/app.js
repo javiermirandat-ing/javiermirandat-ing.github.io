@@ -64,6 +64,10 @@
     for (var i = 0; i < D.projects.length; i++) if (D.projects[i].id === id) return D.projects[i];
     return null;
   }
+  function cert(id) {
+    for (var i = 0; i < (D.certs || []).length; i++) if (D.certs[i].id === id) return D.certs[i];
+    return null;
+  }
 
   // ---------- Iconos pixel (12×12) ----------
   var ICONS = {
@@ -103,6 +107,7 @@
     trophy: ["..xxxxxxxx..", "xxxxxxxxxxxx", "x.xxxxxxxx.x", "x.xxxxxxxx.x", ".xxxxxxxxxx.", "...xxxxxx...", "....xxxx....", ".....xx.....", ".....xx.....", "...xxxxxx...", "..xxxxxxxx..", "............"],
     globe: ["...xxxxxx...", "..x..xx..x..", ".x..x..x..x.", "xxxxxxxxxxxx", "x...x..x...x", "x...x..x...x", "xxxxxxxxxxxx", "x...x..x...x", ".x..x..x..x.", "..x..xx..x..", "...xxxxxx...", "............"],
     image: ["............", "xxxxxxxxxxxx", "x..........x", "x.xx.......x", "x.xx.......x", "x.......x..x", "x......xxx.x", "x..x..xxxxxx", "x.xxxxxxxxxx", "xxxxxxxxxxxx", "............", "............"],
+    chart: ["............", ".........xx.", ".........xx.", "......xx.xx.", "......xx.xx.", "...xx.xx.xx.", "...xx.xx.xx.", "xx.xx.xx.xx.", "xx.xx.xx.xx.", "xx.xx.xx.xx.", "xxxxxxxxxxxx", "............"],
     external: ["......xxxxxx", "..........xx", ".........x.x", "........x..x", "xxxx...x...x", "x.....x....x", "x....x.....x", "x..........x", "x..........x", "x..........x", "xxxxxxxxxxxx", "............"]
   };
 
@@ -276,17 +281,21 @@
             }).join("") + "</span>";
         } else if (s.usedIn) {
           h += '<span class="skill-lvl">' + icon("check") + '</span><span class="skill-unlock">' + esc(t("skills.usedIn")) + ': <span class="chip">' + esc(L(s.usedIn)) + "</span></span>";
+        } else if (s.cert) {
+          h += '<span class="skill-lvl">' + icon("shield") + "</span>";
+        }
+        if (s.cert) {
+          var c = cert(s.cert);
+          if (c) h += '<span class="skill-unlock">' + esc(t("skills.certified")) + ':<button type="button" class="proj-chip cert-chip" data-cert="' + c.id + '">' + esc(c.issuer) + "</button></span>";
         }
         return h + "</li>";
       }).join("");
-      var tall = g.skills.some(function (s) { return s.projects; });
-      return win(L(g), g.icon, '<ul class="skill-list">' + items + "</ul>", tall ? "tall" : "");
+      return win(L(g), g.icon, '<ul class="skill-list">' + items + "</ul>", g.wide ? "wide" : "");
     }).join("");
 
     var badges = '<ul class="badges">' + D.badges.map(function (b) {
-      return '<li class="badge' + (b.progress ? " progress" : "") + '"><span class="medal">' + icon(b.icon) + '</span><span class="badge-text"><span class="badge-state">' +
-        px(b.progress ? t("skills.inProgress") : t("skills.done")) + "</span>" + esc(L(b)) +
-        (b.progress ? '<span class="progressbar" aria-hidden="true"><i></i></span>' : "") + "</span></li>";
+      return '<li><button type="button" class="badge" data-cert="' + esc(b.cert) + '"><span class="medal">' + icon(b.icon) + '</span><span class="badge-text"><span class="badge-state">' +
+        px(t("skills.done")) + "</span>" + esc(L(b)) + '<span class="badge-link">' + icon("image") + esc(t("cert.view")) + "</span></span></button></li>";
     }).join("") + "</ul>";
 
     qs("#s-habilidades").innerHTML = secHead("skills.title", "skills.sub") +
@@ -305,10 +314,11 @@
         '<div class="rewards"><span class="rewards-label">' + px(t("xp.rewards")) + ":</span>" + rewards + "</div></li>";
     }).join("") + "</ol>";
 
-    var eduIcons = { done: "book", progress: "shield", past: "flag" };
     var edu = '<ul class="edu">' + D.education.map(function (e) {
-      return '<li class="edu-item' + (e.state === "progress" ? " progress" : "") + '"><span class="slot-ico ' + (e.state === "progress" ? "cyan" : "") + '">' + icon(eduIcons[e.state] || "book") +
-        "</span><div><h3>" + esc(L(e.title)) + "</h3><p>" + esc(e.org) + '</p><span class="quest-dates">' + esc(L(e.dates)) + "</span></div></li>";
+      return '<li class="edu-item' + (e.highlight ? " highlight" : "") + '"><span class="slot-ico ' + (e.highlight ? "cyan" : "") + '">' + icon(e.icon || "book") +
+        "</span><div><h3>" + esc(L(e.title)) + "</h3><p>" + esc(e.org) + '</p><span class="quest-dates">' + esc(L(e.dates)) + "</span>" +
+        (e.cert ? '<button type="button" class="mini-btn edu-cert" data-cert="' + e.cert + '">' + icon("image") + " " + px(t("cert.view")) + "</button>" : "") +
+        "</div></li>";
     }).join("") + "</ul>";
 
     qs("#s-experiencia").innerHTML = secHead("xp.title", "xp.sub") +
@@ -524,6 +534,44 @@
     sfx.select();
   }
 
+  // ---------- Visor de certificados ----------
+  function openCert(id, fromHistory) {
+    var c = cert(id);
+    if (!c) return;
+    if (!state.modal) state.opener = document.activeElement;
+    state.modal = { cert: id };
+    renderCertModal();
+    var m = qs("#modal");
+    m.hidden = false;
+    document.body.classList.add("locked");
+    var close = qs(".modal-close", m);
+    if (close) close.focus();
+    try {
+      if (!fromHistory) history.pushState({ modal: "cert:" + id }, "", "#certificado/" + id);
+      else if (location.hash !== "#certificado/" + id) history.replaceState(null, "", "#certificado/" + id);
+    } catch (e) { /* file:// */ }
+    unlock("cert");
+    sfx.select();
+  }
+
+  function renderCertModal() {
+    var c = cert(state.modal.cert);
+    var includes = c.includes ? '<div class="info-block"><h3>' + px(t("cert.includes")) + '</h3><ul class="features">' +
+      L(c.includes).map(function (x) { return "<li>" + icon("check") + "<span>" + esc(x) + "</span></li>"; }).join("") + "</ul></div>" : "";
+    var buttons = (c.verify ? '<a class="btn" href="' + esc(c.verify) + '" target="_blank" rel="noopener">' + icon("shield") + px(t("cert.verify")) + "</a>" : "") +
+      '<a class="btn ' + (c.verify ? "btn-ghost" : "") + '" href="' + esc(c.img) + '" target="_blank" rel="noopener">' + icon("external") + px(t("cert.open")) + "</a>";
+    qs("#modal").innerHTML = '<div class="win modal-win cert-win" role="dialog" aria-modal="true" aria-labelledby="modal-title">' +
+      '<button type="button" class="btn-icon modal-close" data-close aria-label="' + esc(t("proj.close")) + '">' + icon("close") + "</button>" +
+      '<div class="cert-grid"><a class="cert-paper" href="' + esc(c.img) + '" target="_blank" rel="noopener">' +
+      '<img src="' + esc(c.img) + '" alt="' + esc(t("cert.alt") + ": " + L(c.title)) + '"></a>' +
+      '<div class="modal-info"><span class="status live modal-status">' + px(t("skills.done")) + "</span>" +
+      '<h2 id="modal-title">' + px(L(c.title)) + '</h2><p class="level-tag">' + esc(c.issuer) + "</p>" +
+      '<p class="cert-date">' + icon("calendar") + esc(L(c.date)) + "</p>" +
+      '<p class="modal-pitch">' + esc(L(c.detail)) + "</p>" + includes +
+      '<div class="btn-row">' + buttons + "</div>" +
+      '<p class="note">' + esc(t("cert.privacy")) + "</p></div></div></div>";
+  }
+
   function closeModal(fromHistory) {
     if (!state.modal) return;
     state.modal = null;
@@ -539,7 +587,7 @@
     if (!fromHistory) {
       try {
         if (history.state && history.state.modal) history.back();
-        else history.replaceState(null, "", "#proyectos");
+        else history.replaceState(null, "", "#" + (state.tab || "perfil"));
       } catch (e) { /* file:// */ }
     }
   }
@@ -738,7 +786,11 @@
   function parseHash() {
     var h = (location.hash || "").replace(/^#/, "");
     var parts = h.split("/");
-    return { tab: TABS.indexOf(parts[0]) >= 0 ? parts[0] : null, project: parts[0] === "proyectos" && parts[1] && project(parts[1]) ? parts[1] : null };
+    return {
+      tab: TABS.indexOf(parts[0]) >= 0 ? parts[0] : null,
+      project: parts[0] === "proyectos" && parts[1] && project(parts[1]) ? parts[1] : null,
+      cert: parts[0] === "certificado" && parts[1] && cert(parts[1]) ? parts[1] : null
+    };
   }
 
   window.addEventListener("popstate", function () {
@@ -746,6 +798,8 @@
     var r = parseHash();
     if (r.project) {
       if (!state.modal || state.modal.id !== r.project) openProject(r.project, null, true);
+    } else if (r.cert) {
+      if (!state.modal || state.modal.cert !== r.cert) openCert(r.cert, true);
     } else {
       if (state.modal) closeModal(true);
       if (r.tab && r.tab !== state.tab) go(r.tab, { noHash: true });
@@ -754,7 +808,7 @@
 
   // ---------- Eventos ----------
   document.addEventListener("click", function (e) {
-    var el = e.target.closest ? e.target.closest("[data-set-lang],[data-sound-toggle],[data-goto],[data-tab],[data-open],[data-close],[data-mode-switch],[data-start-demo],[data-shot-step],[data-shot-index],[data-copy],#hud-lang,#start,#modal") : null;
+    var el = e.target.closest ? e.target.closest("[data-set-lang],[data-sound-toggle],[data-goto],[data-tab],[data-open],[data-close],[data-mode-switch],[data-start-demo],[data-shot-step],[data-shot-index],[data-copy],[data-cert],#hud-lang,#start,#modal") : null;
     if (!el) {
       return;
     }
@@ -781,6 +835,7 @@
     if (el.hasAttribute("data-shot-step")) { stepShot(parseInt(el.getAttribute("data-shot-step"), 10)); return; }
     if (el.hasAttribute("data-shot-index")) { state.modal.shot = parseInt(el.getAttribute("data-shot-index"), 10); showShot(); return; }
     if (el.hasAttribute("data-copy")) { copyText(el.getAttribute("data-copy"), el); return; }
+    if (el.hasAttribute("data-cert")) { openCert(el.getAttribute("data-cert")); return; }
   });
 
   // En la pantalla de título, un clic en cualquier parte que no sea un botón empieza el juego.
@@ -849,7 +904,9 @@
     if (state.tab) {
       TABS.forEach(function (id) { qs("#s-" + id).hidden = id !== state.tab; });
     }
-    if (state.modal) {
+    if (state.modal && state.modal.cert) {
+      renderCertModal();
+    } else if (state.modal) {
       var mode = state.modal.mode, shot = state.modal.shot;
       renderModal();
       state.modal.mode = mode; state.modal.shot = shot;
@@ -863,9 +920,10 @@
   updateXP();
 
   var route = parseHash();
-  if (route.tab || sget("pf.started", true) === "1") {
-    enterApp(true, route.tab || "perfil");
+  if (route.tab || route.cert || sget("pf.started", true) === "1") {
+    enterApp(true, route.tab || (route.cert ? "habilidades" : "perfil"));
     if (route.project) openProject(route.project, null, true);
+    if (route.cert) openCert(route.cert, true);
   } else {
     qs("#start").focus({ preventScroll: true });
   }

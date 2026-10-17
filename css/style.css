@@ -657,7 +657,9 @@ body.in-app .veil { opacity: 1; }
   align-items: start;
 }
 
-.skills-layout .tall { grid-column: 2; grid-row: 1 / span 2; }
+.skills-layout .wide { grid-column: 1 / -1; }
+
+.skills-layout .wide .skill-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 44px; }
 
 .slot {
   display: flex;
@@ -747,15 +749,30 @@ body.in-app .veil { opacity: 1; }
 
 .badges { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
 
+.badges > li { display: flex; }
+
 .badge {
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 12px;
+  width: 100%;
   padding: 12px;
+  font: inherit;
+  color: inherit;
+  text-align: left;
   background: rgba(8, 11, 32, 0.6);
   border: 2px solid var(--slot-line);
   border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.12s steps(2), border-color 0.12s;
 }
+
+.badge:hover { border-color: var(--gold); transform: translateY(-2px); }
+
+.badge-link { display: inline-flex; align-items: center; gap: 6px; font: 17px/1.1 var(--vt); color: var(--cyan); font-weight: 400; }
+
+.badge-link .px-icon { font-size: 12px; }
 
 .medal {
   position: relative;
@@ -884,7 +901,11 @@ body.in-app .veil { opacity: 1; }
 
 .edu-item .quest-dates { display: inline-block; margin-top: 6px; }
 
-.edu-item.progress { border-color: var(--cyan); }
+.edu-item.highlight { border-color: var(--cyan); box-shadow: 0 0 18px rgba(77, 225, 255, 0.12); }
+
+.edu-cert { display: inline-flex; align-items: center; gap: 6px; margin: 10px 0 0 10px; vertical-align: middle; }
+
+.edu-cert .px-icon { font-size: 11px; }
 
 /* ---------- Proyectos ---------- */
 .levels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 26px; }
@@ -1203,6 +1224,23 @@ body.in-app .veil { opacity: 1; }
   border-radius: 6px;
 }
 
+/* ---------- Visor de certificados ---------- */
+.cert-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 30px; align-items: start; clear: both; }
+
+.cert-paper {
+  display: block;
+  padding: 6px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 0 3px var(--line), 0 0 0 6px var(--line-in), 0 18px 34px rgba(0, 0, 0, 0.5);
+}
+
+.cert-paper img { width: 100%; height: auto; max-height: 76vh; object-fit: contain; }
+
+.cert-date { display: flex; align-items: center; gap: 8px; margin: -4px 0 14px; font: 19px/1.2 var(--vt); color: var(--cyan); }
+
+.cert-date .px-icon { font-size: 14px; }
+
 /* ---------- Contacto ---------- */
 .contact-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 30px; align-items: start; }
 
@@ -1323,7 +1361,7 @@ body.in-app .veil { opacity: 1; }
   .profile { grid-template-columns: minmax(0, 1fr); }
   .char-card { max-width: 520px; width: 100%; justify-self: center; }
   .contact-grid { grid-template-columns: minmax(0, 1fr); }
-  .modal-grid, .modal-grid.landscape { grid-template-columns: minmax(0, 1fr); }
+  .modal-grid, .modal-grid.landscape, .cert-grid { grid-template-columns: minmax(0, 1fr); }
   .level.bonus { flex-direction: column; }
   .level.bonus .level-cover { flex: none; min-height: 0; aspect-ratio: 16 / 9; border-right: 0; border-bottom: 3px solid #e6d4ff; }
 }
@@ -1361,7 +1399,7 @@ body.in-app .veil { opacity: 1; }
   .stage { padding: 24px 14px 110px; }
   .foot { padding-bottom: calc(96px + env(safe-area-inset-bottom)); }
   .grid-2, .levels, .edu, .skills-layout { grid-template-columns: minmax(0, 1fr); }
-  .skills-layout .tall { grid-column: auto; grid-row: auto; }
+  .skills-layout .wide .skill-list { grid-template-columns: minmax(0, 1fr); }
   .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .slots { grid-template-columns: minmax(0, 1fr); }
   .win { padding: 28px 16px 18px; }

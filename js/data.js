@@ -14,14 +14,14 @@ window.PORTFOLIO = {
     es: {
       "meta.title": "Javier Miranda · Portafolio",
       "title.pre": "PORTAFOLIO · 2026",
-      "title.sub": "Ingeniero en Informática y Telecomunicaciones",
+      "title.sub": "Ingeniero en Informática",
       "title.start": "PRESIONA START",
       "title.hint": "Enter · Espacio · Clic",
       "title.sound": "SONIDO",
       "title.on": "SÍ",
       "title.off": "NO",
       "title.skip": "Saltar intro",
-      "hud.class": "Ing. en Informática y Telecom.",
+      "hud.class": "Ingeniero en Informática",
       "hud.explore": "EXPLORACIÓN",
       "hud.cv": "CV",
       "hud.sound": "Activar o silenciar sonido",
@@ -33,12 +33,12 @@ window.PORTFOLIO = {
       "nav.contacto": "Contacto",
       "perfil.title": "FICHA DE PERSONAJE",
       "perfil.sub": "Quién soy y qué traigo al equipo",
-      "perfil.class": "Ingeniero en Informática y Telecomunicaciones",
+      "perfil.class": "Ingeniero en Informática · Diplomado en Ciberseguridad",
       "perfil.origin": "Valparaíso, Chile",
       "perfil.status": "Abierto a oportunidades en TI",
       "perfil.langs": "IDIOMAS",
       "perfil.story": "HISTORIA",
-      "perfil.bio": "Soy Ingeniero en Informática y Telecomunicaciones (Duoc UC) y hoy me especializo con un diplomado en Ciberseguridad. Me muevo entre el desarrollo de software —web y apps móviles— y la experiencia práctica en atención de público, medios digitales y apoyo administrativo. En mi tiempo libre diseño y programo mis propias apps y juegos: aquí puedes probar varios.",
+      "perfil.bio": "Soy Ingeniero en Informática, titulado en Duoc UC, y completé el Diplomado en Ciberseguridad de la misma institución. Me muevo entre el desarrollo de software —web y apps móviles— y la experiencia práctica en atención de público, medios digitales y apoyo administrativo. En mi tiempo libre diseño y programo mis propias apps y juegos: aquí puedes probar varios.",
       "perfil.stats": "ESTADÍSTICAS",
       "perfil.passives": "HABILIDADES PASIVAS",
       "perfil.inventory": "INVENTARIO",
@@ -54,6 +54,13 @@ window.PORTFOLIO = {
       "skills.badges": "LOGROS · CERTIFICADOS",
       "skills.inProgress": "EN CURSO",
       "skills.done": "OBTENIDO",
+      "skills.certified": "Certificado",
+      "cert.view": "Ver certificado",
+      "cert.verify": "Verificar en Duoc UC",
+      "cert.open": "Ver en tamaño completo",
+      "cert.includes": "INCLUYE",
+      "cert.privacy": "Por privacidad, el RUT aparece oculto en la imagen.",
+      "cert.alt": "Certificado",
       "xp.title": "REGISTRO DE MISIONES",
       "xp.sub": "Experiencia laboral y formación",
       "xp.jobs": "MISIONES · EXPERIENCIA LABORAL",
@@ -111,14 +118,14 @@ window.PORTFOLIO = {
     en: {
       "meta.title": "Javier Miranda · Portfolio",
       "title.pre": "PORTFOLIO · 2026",
-      "title.sub": "IT & Telecommunications Engineer",
+      "title.sub": "IT Engineer",
       "title.start": "PRESS START",
       "title.hint": "Enter · Space · Click",
       "title.sound": "SOUND",
       "title.on": "ON",
       "title.off": "OFF",
       "title.skip": "Skip intro",
-      "hud.class": "IT & Telecom Engineer",
+      "hud.class": "IT Engineer",
       "hud.explore": "EXPLORED",
       "hud.cv": "CV",
       "hud.sound": "Toggle sound",
@@ -130,12 +137,12 @@ window.PORTFOLIO = {
       "nav.contacto": "Contact",
       "perfil.title": "CHARACTER SHEET",
       "perfil.sub": "Who I am and what I bring to the team",
-      "perfil.class": "IT & Telecommunications Engineer",
+      "perfil.class": "IT Engineer · Diploma in Cybersecurity",
       "perfil.origin": "Valparaíso, Chile",
       "perfil.status": "Open to IT opportunities",
       "perfil.langs": "LANGUAGES",
       "perfil.story": "BACKSTORY",
-      "perfil.bio": "I'm an IT and Telecommunications Engineer (Duoc UC), currently specializing with a diploma in Cybersecurity. I combine software development —web and mobile apps— with hands-on experience in customer service, digital media and administrative support. In my free time I design and build my own apps and games: you can try several of them here.",
+      "perfil.bio": "I'm an IT Engineer, graduated from Duoc UC, and I completed Duoc UC's Diploma in Cybersecurity. I combine software development —web and mobile apps— with hands-on experience in customer service, digital media and administrative support. In my free time I design and build my own apps and games: you can try several of them here.",
       "perfil.stats": "STATS",
       "perfil.passives": "PASSIVE SKILLS",
       "perfil.inventory": "INVENTORY",
@@ -151,6 +158,13 @@ window.PORTFOLIO = {
       "skills.badges": "ACHIEVEMENTS · CERTIFICATES",
       "skills.inProgress": "IN PROGRESS",
       "skills.done": "EARNED",
+      "skills.certified": "Certified",
+      "cert.view": "View certificate",
+      "cert.verify": "Verify on Duoc UC",
+      "cert.open": "View full size",
+      "cert.includes": "INCLUDES",
+      "cert.privacy": "For privacy, the national ID number is hidden in the image.",
+      "cert.alt": "Certificate",
       "xp.title": "QUEST LOG",
       "xp.sub": "Work experience and education",
       "xp.jobs": "QUESTS · WORK EXPERIENCE",
@@ -213,12 +227,13 @@ window.PORTFOLIO = {
     experiencia: { icon: "scroll", es: ["Cronista", "Leíste el registro de misiones"], en: ["Chronicler", "You read the quest log"] },
     proyectos: { icon: "pad", es: ["Jugador", "Entraste a la selección de nivel"], en: ["Player", "You entered level select"] },
     contacto: { icon: "chat", es: ["Multijugador", "Encontraste la sala de contacto"], en: ["Multiplayer", "You found the contact room"] },
-    demo: { icon: "bolt", es: ["Beta tester", "Probaste una demo jugable"], en: ["Beta tester", "You tried a playable demo"] }
+    demo: { icon: "bolt", es: ["Beta tester", "Probaste una demo jugable"], en: ["Beta tester", "You tried a playable demo"] },
+    cert: { icon: "scroll", es: ["Verificador", "Revisaste un certificado"], en: ["Verifier", "You checked a certificate"] }
   },
 
   stats: [
     { value: "5", es: "Proyectos propios", en: "Personal projects" },
-    { value: "6", es: "Certificados", en: "Certificates" },
+    { value: "10", es: "Certificados y cursos", en: "Certificates & courses" },
     { value: "6+", es: "Años de atención al cliente", en: "Years in customer service" },
     { value: "2", es: "Idiomas", en: "Languages" }
   ],
@@ -249,14 +264,16 @@ window.PORTFOLIO = {
   skillGroups: [
     {
       icon: "code",
-      es: "PROGRAMACIÓN", en: "PROGRAMMING",
+      es: "PROGRAMACIÓN Y DATOS", en: "PROGRAMMING & DATA",
       skills: [
         { name: { es: "Desarrollo Web Front-End", en: "Front-End Web Development" }, level: 4 },
         { name: { es: "Desarrollo Web Back-End", en: "Back-End Web Development" }, level: 3 },
         { name: { es: "Python", en: "Python" }, level: 3 },
         { name: { es: "Django", en: "Django" }, level: 3 },
-        { name: { es: "SQL Server y MySQL", en: "SQL Server & MySQL" }, level: 3 },
-        { name: { es: "Ionic", en: "Ionic" }, level: 2 }
+        { name: { es: "SQL Server y MySQL", en: "SQL Server & MySQL" }, level: 3, cert: "otec-sql" },
+        { name: { es: "Ionic", en: "Ionic" }, level: 2 },
+        { name: { es: "Ciberseguridad", en: "Cybersecurity" }, cert: "diplomado" },
+        { name: { es: "Inteligencia de negocios", en: "Business intelligence" }, cert: "duoc-cert" }
       ]
     },
     {
@@ -274,6 +291,7 @@ window.PORTFOLIO = {
     },
     {
       icon: "tools",
+      wide: true,
       es: "HERRAMIENTAS Y GESTIÓN", en: "TOOLS & MANAGEMENT",
       skills: [
         { name: { es: "Gestión de proyectos informáticos", en: "IT project management" }, level: 4 },
@@ -286,14 +304,18 @@ window.PORTFOLIO = {
     }
   ],
 
+  // Cada logro abre la imagen de su certificado (ver "certs" más abajo).
   badges: [
-    { icon: "db", es: "Análisis y desarrollo de modelo de datos", en: "Data model analysis and development" },
-    { icon: "check", es: "Calidad de software", en: "Software quality" },
-    { icon: "list", es: "Análisis y planificación de requerimientos informáticos", en: "IT requirements analysis and planning" },
-    { icon: "code", es: "Programación de software", en: "Software programming" },
-    { icon: "flag", es: "Gestión de proyectos informáticos", en: "IT project management" },
-    { icon: "blocks", es: "Arquitectura de software", en: "Software architecture" },
-    { icon: "shield", es: "Diplomado: Ciberseguridad en la Organización · Duoc UC", en: "Diploma: Cybersecurity in the Organization · Duoc UC", progress: true }
+    { icon: "shield", es: "Diplomado en Ciberseguridad · Duoc UC", en: "Diploma in Cybersecurity · Duoc UC", cert: "diplomado" },
+    { icon: "db", es: "Gestión de Base de Datos con SQL · OTEC Talento Local", en: "Database Management with SQL · OTEC Talento Local", cert: "otec-sql" },
+    { icon: "db", es: "Análisis y desarrollo de modelos de datos", en: "Data model analysis and development", cert: "duoc-cert" },
+    { icon: "check", es: "Calidad de software", en: "Software quality", cert: "duoc-cert" },
+    { icon: "list", es: "Análisis y planificación de requerimientos informáticos", en: "IT requirements analysis and planning", cert: "duoc-cert" },
+    { icon: "code", es: "Programación de software", en: "Software programming", cert: "duoc-cert" },
+    { icon: "flag", es: "Gestión de proyectos informáticos", en: "IT project management", cert: "duoc-cert" },
+    { icon: "blocks", es: "Arquitectura de software", en: "Software architecture", cert: "duoc-cert" },
+    { icon: "chart", es: "Inteligencia de negocios", en: "Business intelligence", cert: "duoc-cert" },
+    { icon: "globe", es: "Certificado internacional en nivel intermedio", en: "International certificate, intermediate level", cert: "duoc-cert" }
   ],
 
   jobs: [
@@ -375,10 +397,65 @@ window.PORTFOLIO = {
   ],
 
   education: [
-    { org: "Duoc UC", title: { es: "Ingeniería en Informática y Telecomunicaciones", en: "IT & Telecommunications Engineering" }, dates: "2019 — 2024", state: "done" },
-    { org: "Duoc UC", title: { es: "Diplomado en Ciberseguridad en la Organización", en: "Diploma in Cybersecurity in the Organization" }, dates: { es: "En curso", en: "In progress" }, state: "progress" },
-    { org: "Universidad de Viña del Mar", title: { es: "Pedagogía en Educación Física", en: "Physical Education Teaching" }, dates: "2017 — 2018", state: "past" },
-    { org: "Colegio Presbiteriano David Trumbull", title: { es: "Enseñanza básica y media completa", en: "Primary and secondary education" }, dates: "2001 — 2015", state: "done" }
+    { org: "Duoc UC · Educación Continua", title: { es: "Diplomado en Ciberseguridad (120 horas)", en: "Diploma in Cybersecurity (120 hours)" }, dates: { es: "Oct 2025 — Jun 2026", en: "Oct 2025 — Jun 2026" }, icon: "shield", cert: "diplomado", highlight: true },
+    { org: "Duoc UC", title: { es: "Ingeniería en Informática · Título de Ingeniero en Informática", en: "IT Engineering · IT Engineer degree" }, dates: "2019 — 2024", icon: "book", cert: "titulo" },
+    { org: "OTEC Talento Local", title: { es: "Capacitación: Gestión de Base de Datos con SQL (nivel básico)", en: "Training: Database Management with SQL (basic level)" }, dates: "2025", icon: "db", cert: "otec-sql" },
+    { org: "Universidad de Viña del Mar", title: { es: "Pedagogía en Educación Física", en: "Physical Education Teaching" }, dates: "2017 — 2018", icon: "flag" },
+    { org: "Colegio Presbiteriano David Trumbull", title: { es: "Enseñanza básica y media completa", en: "Primary and secondary education" }, dates: "2001 — 2015", icon: "book" }
+  ],
+
+  // Certificados que se pueden ver desde el portafolio. Las imágenes son copias
+  // con el RUT tapado; los PDF originales no se publican.
+  certs: [
+    {
+      id: "diplomado",
+      img: "img/certs/diplomado-ciberseguridad.jpg",
+      issuer: "Duoc UC · Educación Continua",
+      title: { es: "Diplomado en Ciberseguridad", en: "Diploma in Cybersecurity" },
+      date: { es: "27 oct 2025 — 2 jun 2026 · 120 horas cronológicas", en: "Oct 27, 2025 — Jun 2, 2026 · 120 hours" },
+      detail: {
+        es: "Programa de la Escuela de Informática y Telecomunicaciones de Duoc UC, aprobado con nota final 6,2.",
+        en: "Program by Duoc UC's School of IT and Telecommunications, passed with a final grade of 6.2 (out of 7)."
+      },
+      verify: "https://certificadovalida.duoc.cl/compartir?idCertificado=3047009356"
+    },
+    {
+      id: "titulo",
+      img: "img/certs/titulo-ingeniero-informatica.jpg",
+      issuer: "Duoc UC",
+      title: { es: "Título de Ingeniero en Informática", en: "IT Engineer degree" },
+      date: { es: "Octubre de 2024", en: "October 2024" },
+      detail: {
+        es: "Título profesional otorgado por el Instituto Profesional Duoc UC (Registro de Título N° 246161).",
+        en: "Professional degree awarded by Instituto Profesional Duoc UC (Degree Registry No. 246161)."
+      }
+    },
+    {
+      id: "duoc-cert",
+      img: "img/certs/certificaciones-duoc.jpg",
+      issuer: "Duoc UC",
+      title: { es: "Certificaciones de Ingeniería en Informática", en: "IT Engineering certifications" },
+      date: { es: "Certificado emitido en mayo de 2025", en: "Certificate issued in May 2025" },
+      detail: {
+        es: "Ocho certificaciones obtenidas dentro de la carrera.",
+        en: "Eight certifications earned within the degree."
+      },
+      includes: {
+        es: ["Análisis y desarrollo de modelos de datos", "Calidad de software", "Análisis y planificación de requerimientos informáticos", "Programación de software", "Gestión de proyectos informáticos", "Arquitectura de software", "Inteligencia de negocios", "Certificado internacional en nivel intermedio"],
+        en: ["Data model analysis and development", "Software quality", "IT requirements analysis and planning", "Software programming", "IT project management", "Software architecture", "Business intelligence", "International certificate, intermediate level"]
+      }
+    },
+    {
+      id: "otec-sql",
+      img: "img/certs/otec-gestion-bd-sql.jpg",
+      issuer: "OTEC Talento Local",
+      title: { es: "Gestión de Base de Datos con SQL (nivel básico)", en: "Database Management with SQL (basic level)" },
+      date: { es: "Primer trimestre de 2025", en: "First quarter of 2025" },
+      detail: {
+        es: "Curso de capacitación aprobado con nota 7,0 y 92 % de asistencia.",
+        en: "Training course passed with a grade of 7.0 (out of 7) and 92% attendance."
+      }
+    }
   ],
 
   projects: [

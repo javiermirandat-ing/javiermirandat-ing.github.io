@@ -16,7 +16,8 @@ editar ese archivo: la página se arma sola.
 |---|---|
 | Textos, experiencia, habilidades, proyectos | `js/data.js` |
 | Capturas de los proyectos | `img/<proyecto>/` |
-| CV descargable | `cv/` |
+| CV descargable (sin la dirección) | `cv/` |
+| Certificados (imágenes con el RUT tapado) | `img/certs/` y la lista `certs` en `js/data.js` |
 | Demos jugables (builds web de Flutter) | `demos/stray-pets/`, `demos/comite/` |
 | Estilos | `css/style.css` |
 | Fondo animado (Valparaíso en pixel art) | `js/scene.js` |
@@ -34,7 +35,8 @@ editar ese archivo: la página se arma sola.
 - Atajos: teclas `1` a `5` para cambiar de pestaña, flechas en la galería y
   `Esc` para cerrar. Hay un código secreto.
 - Enlaces directos: `#perfil`, `#habilidades`, `#experiencia`, `#proyectos`,
-  `#contacto` y `#proyectos/<id>` (por ejemplo `#proyectos/migofit`).
+  `#contacto`, `#proyectos/<id>` (por ejemplo `#proyectos/migofit`) y
+  `#certificado/<id>` (por ejemplo `#certificado/diplomado`).
 - Respeta la preferencia de "reducir movimiento" del sistema.
 
 © 2026 Javier Miranda Tapia
