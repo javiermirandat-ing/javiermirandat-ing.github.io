@@ -18,13 +18,13 @@ editar ese archivo: la página se arma sola.
 | Capturas de los proyectos | `img/<proyecto>/` |
 | CV descargable (sin la dirección) | `cv/` |
 | Certificados (imágenes con el RUT tapado) | `img/certs/` y la lista `certs` en `js/data.js` |
-| Demos jugables (builds web de Flutter) | `demos/stray-pets/`, `demos/comite/` |
+| Demos jugables (builds web de Flutter) | `demos/condominio/`, `demos/comite/`, `demos/mimo/`, `demos/stray-pets/` |
 | Estilos | `css/style.css` |
 | Fondo animado (Valparaíso en pixel art) | `js/scene.js` |
 
 ## Actualizar una demo de Flutter
 
-1. `flutter build web` en el proyecto (para el Comité, con `-t lib/main_demo.dart`).
+1. `flutter build web` en el proyecto (para el Comité y el Condominio, con `-t lib/main_demo.dart`).
 2. Copiar `build/web` a `demos/<nombre>/`.
 3. En `demos/<nombre>/index.html`, dejar `<base href="/demos/<nombre>/">`.
 4. Al final de `flutter_bootstrap.js`, cargar CanvasKit desde la propia carpeta:

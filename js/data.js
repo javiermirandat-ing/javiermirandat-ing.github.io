@@ -72,7 +72,7 @@ window.PORTFOLIO = {
       "xp.rewards": "Recompensas",
       "xp.present": "Actualidad",
       "proj.title": "SELECCIÓN DE NIVEL",
-      "proj.sub": "Apps y juegos que diseñé y programé. Dos se pueden jugar aquí mismo.",
+      "proj.sub": "Apps y juegos que diseñé y programé. Cuatro se pueden jugar aquí mismo.",
       "proj.play": "JUGAR DEMO",
       "proj.gallery": "VER CAPTURAS",
       "proj.level": "NIVEL",
@@ -176,7 +176,7 @@ window.PORTFOLIO = {
       "xp.rewards": "Rewards",
       "xp.present": "Present",
       "proj.title": "LEVEL SELECT",
-      "proj.sub": "Apps and games I designed and built. Two of them are playable right here.",
+      "proj.sub": "Apps and games I designed and built. Four of them are playable right here.",
       "proj.play": "PLAY DEMO",
       "proj.gallery": "SEE SCREENSHOTS",
       "proj.level": "LEVEL",
@@ -233,7 +233,7 @@ window.PORTFOLIO = {
   },
 
   stats: [
-    { value: "5", es: "Proyectos propios", en: "Personal projects" },
+    { value: "7", es: "Proyectos propios", en: "Personal projects" },
     { value: "10", es: "Certificados y cursos", en: "Certificates & courses" },
     { value: "6+", es: "Años de atención al cliente", en: "Years in customer service" },
     { value: "2", es: "Idiomas", en: "Languages" }
@@ -281,13 +281,13 @@ window.PORTFOLIO = {
       icon: "pad",
       es: "APPS Y JUEGOS", en: "APPS & GAMES",
       skills: [
-        { name: { es: "Flutter y Dart", en: "Flutter & Dart" }, projects: ["migofit", "comite", "straypets"] },
-        { name: { es: "Firebase (Auth y Firestore)", en: "Firebase (Auth & Firestore)" }, projects: ["migofit", "comite"] },
-        { name: { es: "Kotlin y Android nativo", en: "Kotlin & native Android" }, projects: ["pastillero"] },
+        { name: { es: "Flutter y Dart", en: "Flutter & Dart" }, projects: ["migofit", "condominio", "comite", "mimo", "straypets"] },
+        { name: { es: "Firebase (Auth y Firestore)", en: "Firebase (Auth & Firestore)" }, projects: ["migofit", "condominio", "comite"] },
+        { name: { es: "Kotlin y Android nativo", en: "Kotlin & native Android" }, projects: ["pastillero", "migofit"] },
         { name: { es: "SQLite cifrado (SQLCipher)", en: "Encrypted SQLite (SQLCipher)" }, projects: ["pastillero"] },
         { name: { es: "Godot 4 y GDScript", en: "Godot 4 & GDScript" }, projects: ["shard"] },
         { name: { es: "Git y control de versiones", en: "Git & version control" }, projects: ["migofit", "shard"] },
-        { name: { es: "Desarrollo asistido por IA (Claude Code)", en: "AI-assisted development (Claude Code)" }, projects: ["migofit", "pastillero", "comite", "straypets", "shard"] }
+        { name: { es: "Desarrollo asistido por IA (Claude Code)", en: "AI-assisted development (Claude Code)" }, projects: ["migofit", "condominio", "comite", "pastillero", "mimo", "straypets", "shard"] }
       ]
     },
     {
@@ -477,8 +477,10 @@ window.PORTFOLIO = {
         es: [
           "Rutinas por deporte o por zona del cuerpo, con ejercicios ilustrados, series y descansos cronometrados.",
           "Mascota virtual con hambre y ánimo: cuanto más feliz está, más experiencia rinde cada entrenamiento.",
-          "Economía de juego: PetCoins, tienda de mascotas, outfits, habitaciones y comida.",
-          "Rachas, misiones, regalo diario y tres minijuegos.",
+          "Todo se desbloquea jugando: PetCoins y niveles para mascotas, outfits, habitaciones y juguetes, sin planes de pago.",
+          "Habitación viva: la mascota pasea, come y duerme de noche, y se puede acariciar, arrastrar y lanzar.",
+          "21 logros, rachas que se comparten como imagen, misiones, regalo diario y tres minijuegos.",
+          "Widget nativo de Android hecho en Kotlin.",
           "Tutorial guiado paso a paso para el primer uso.",
           "Inicio con Google o como invitado, progreso sincronizado en la nube y uso sin conexión.",
           "Reglas de seguridad de Firestore, App Check y panel de administración con informe de errores."
@@ -486,18 +488,20 @@ window.PORTFOLIO = {
         en: [
           "Routines by sport or body area, with illustrated exercises, sets and timed rests.",
           "A virtual pet with hunger and mood: the happier it is, the more XP each workout yields.",
-          "In-game economy: PetCoins, pet shop, outfits, rooms and food.",
-          "Streaks, quests, a daily gift and three mini-games.",
+          "Everything unlocks by playing: PetCoins and levels for pets, outfits, rooms and toys, with no paid plans.",
+          "A living room: the pet walks around, eats and sleeps at night, and you can pet it, drag it and toss it.",
+          "21 achievements, streaks shareable as images, quests, a daily gift and three mini-games.",
+          "Native Android home-screen widget written in Kotlin.",
           "Step-by-step guided tutorial for first-time users.",
           "Google or guest sign-in, cloud-synced progress and offline use.",
           "Firestore security rules, App Check and an admin panel with error reports."
         ]
       },
-      stack: ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore", "App Check", "Android"],
+      stack: ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore", "App Check", "Kotlin", "Android"],
       stats: [
         { value: "78", es: "ejercicios ilustrados", en: "illustrated exercises" },
-        { value: "15", es: "habitaciones", en: "rooms" },
-        { value: "3", es: "minijuegos", en: "mini-games" }
+        { value: "21", es: "logros", en: "achievements" },
+        { value: "205", es: "pruebas automáticas", en: "automated tests" }
       ],
       note: {
         es: "Funciona con Firebase y datos reales de usuarios, por eso aquí se muestra con capturas tomadas en el emulador de Android.",
@@ -509,10 +513,65 @@ window.PORTFOLIO = {
         { src: "img/migofit/descanso.jpg", es: "Descanso cronometrado entre series", en: "Timed rest between sets" },
         { src: "img/migofit/recompensa.jpg", es: "Recompensa al terminar la rutina", en: "Reward after finishing a routine" },
         { src: "img/migofit/habitacion.jpg", es: "La habitación de Migo", en: "Migo's room" },
-        { src: "img/migofit/tienda.jpg", es: "Tienda de mascotas", en: "Pet shop" },
         { src: "img/migofit/regalo.jpg", es: "Regalo diario", en: "Daily gift" },
         { src: "img/migofit/minijuego.jpg", es: "Minijuego: Atrapa la Fruta", en: "Mini-game: Catch the Fruit" },
         { src: "img/migofit/bienvenida.jpg", es: "Pantalla de bienvenida", en: "Welcome screen" }
+      ]
+    },
+    {
+      id: "condominio",
+      name: "Mi Condominio",
+      color: "#5b8def",
+      device: "phone",
+      demo: "demos/condominio/index.html",
+      cover: ["img/condominio/desglose.jpg", "img/condominio/inicio.jpg", "img/condominio/finanzas.jpg"],
+      tag: { es: "App de administración de condominios", en: "Condominium management app" },
+      status: { es: "Demo jugable", en: "Playable demo" },
+      statusKind: "live",
+      extraBadge: { es: "En desarrollo", en: "In development" },
+      pitch: {
+        es: "Cada propietario ve y paga solo lo de su departamento: gastos comunes con desglose, reservas, solicitudes y avisos, más un panel de finanzas para la administración.",
+        en: "Each owner sees and pays only for their own unit: common expenses with a breakdown, bookings, requests and notices, plus a finance dashboard for management."
+      },
+      features: {
+        es: [
+          "Cada persona queda ligada a su unidad: solo ve y paga lo suyo, sin buscar su departamento en una lista.",
+          "Gastos comunes con transferencia y comprobante, y un desglose de «¿En qué se va tu gasto común?» con gráficos y comparación mes a mes.",
+          "Reservas de quinchos, canchas y salones por bloques o turnos, con cobro y aprobación cuando corresponde.",
+          "Solicitudes y reclamos con seguimiento, apoyos de los vecinos y tiempo promedio de respuesta.",
+          "Avisos para todo el condominio o solo para tu unidad: encomiendas, cortes de agua, seguridad.",
+          "Panel de administración: pagos por confirmar, emisión de cobros, padrón por Excel, invitación o código, y finanzas del mes.",
+          "Pensada para el plan gratuito de Firebase, con limpieza automática de los datos antiguos."
+        ],
+        en: [
+          "Every person is tied to their unit: they only see and pay what's theirs, without searching for their apartment in a list.",
+          "Common expenses with bank transfer and receipt, plus a “where does your fee go?” breakdown with charts and month-over-month comparison.",
+          "Bookings for barbecue areas, courts and party rooms by time slots or shifts, with fees and approval when needed.",
+          "Requests and complaints with follow-up, neighbor upvotes and average response time.",
+          "Notices for the whole condominium or just your unit: parcels, water outages, security.",
+          "Admin dashboard: payments to confirm, billing, resident roster via Excel, invitation or code, and monthly finances.",
+          "Built for Firebase's free plan, with automatic cleanup of old data."
+        ]
+      },
+      stack: ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore", "Android", "Web"],
+      stats: [
+        { value: "75", es: "pruebas automáticas", en: "automated tests" },
+        { value: "7", es: "cuentas de ejemplo para probar cada rol", en: "sample accounts to try every role" },
+        { value: "2", es: "condominios de ejemplo", en: "sample condominiums" }
+      ],
+      note: {
+        es: "Demo con personas, direcciones y montos inventados; se reinicia al recargar. Prueba entrar como propietaria (Javiera) y como administradora (Patricia).",
+        en: "Demo with made-up people, addresses and amounts; it resets on reload. Try signing in as an owner (Javiera) and as the administrator (Patricia)."
+      },
+      shots: [
+        { src: "img/condominio/inicio.jpg", es: "Inicio de una propietaria: gasto, reserva, solicitudes y avisos", en: "An owner's home: fee, booking, requests and notices" },
+        { src: "img/condominio/gastos.jpg", es: "Gastos comunes con pago y comparación mensual", en: "Common expenses with payment and monthly comparison" },
+        { src: "img/condominio/desglose.jpg", es: "¿En qué se va tu gasto común?", en: "Where does your fee go?" },
+        { src: "img/condominio/reservas.jpg", es: "Reservas de espacios comunes", en: "Common area bookings" },
+        { src: "img/condominio/solicitudes.jpg", es: "Solicitudes y reclamos con seguimiento", en: "Requests and complaints with follow-up" },
+        { src: "img/condominio/admin.jpg", es: "Inicio de la administradora", en: "Administrator's home" },
+        { src: "img/condominio/finanzas.jpg", es: "Finanzas del mes", en: "Monthly finances" },
+        { src: "img/condominio/entrar.jpg", es: "Entrada con cuentas de ejemplo por rol", en: "Sign-in with sample accounts by role" }
       ]
     },
     {
@@ -521,7 +580,7 @@ window.PORTFOLIO = {
       color: "#3ddc97",
       device: "phone",
       demo: "demos/comite/index.html",
-      cover: ["img/comite/entrar.jpg", "img/comite/muro.jpg", "img/comite/resumen.jpg"],
+      cover: ["img/comite/agenda.jpg", "img/comite/muro.jpg", "img/comite/resumen.jpg"],
       tag: { es: "App de gestión para comunidades", en: "Community management app" },
       status: { es: "Demo jugable", en: "Playable demo" },
       statusKind: "live",
@@ -534,8 +593,10 @@ window.PORTFOLIO = {
           "Muro de problemas con fotos, comentarios y estados: abierto, en proceso y resuelto.",
           "Seguimiento con responsable, plazo y alerta de vencidos.",
           "Avisos fijados y agenda de reuniones con confirmación de asistencia.",
+          "Los encargados de piso proponen fechas y el administrador las agenda, ajusta o rechaza con motivo.",
           "Chat general y mensajes privados.",
-          "Roles: miembro, encargado de piso y administrador, con aprobación de solicitudes.",
+          "Roles: miembro, encargado de piso y administrador; cada encargado aprueba las cuentas nuevas de su piso.",
+          "Opción «Recuérdame»: sin ella, la sesión se cierra tras 10 minutos fuera de la app.",
           "Actas de reunión y resumen con estadísticas por piso y tiempo promedio de solución.",
           "Android y web con el mismo código, pensada para el plan gratuito de Firebase."
         ],
@@ -543,8 +604,10 @@ window.PORTFOLIO = {
           "Issue wall with photos, comments and states: open, in progress and solved.",
           "Follow-up with an owner, a deadline and overdue alerts.",
           "Pinned announcements and a meeting calendar with RSVP.",
+          "Floor leads propose dates and the admin schedules, adjusts or rejects them with a reason.",
           "Group chat and private messages.",
-          "Roles: member, floor lead and admin, with sign-up approval.",
+          "Roles: member, floor lead and admin; each floor lead approves new accounts on their floor.",
+          "“Remember me” option: without it, the session closes after 10 minutes away from the app.",
           "Meeting minutes and a summary with per-floor stats and average resolution time.",
           "Android and web from one codebase, designed for Firebase's free plan."
         ]
@@ -552,18 +615,21 @@ window.PORTFOLIO = {
       stack: ["Flutter", "Dart", "Firebase Auth", "Cloud Firestore", "Android", "Web"],
       stats: [
         { value: "4", es: "roles de usuario", en: "user roles" },
-        { value: "33", es: "pruebas automáticas", en: "automated tests" },
+        { value: "45", es: "pruebas automáticas", en: "automated tests" },
         { value: "2", es: "plataformas", en: "platforms" }
       ],
       note: {
-        es: "Demo con personas y casos inventados; se reinicia al recargar. Entra con una cuenta de ejemplo, por ejemplo Ana, la administradora.",
-        en: "Demo with made-up people and cases; it resets on reload. Sign in with a sample account, for example Ana, the admin."
+        es: "Demo con personas y casos inventados; se reinicia al recargar. Entra con una cuenta de ejemplo, por ejemplo Ana (administradora) o Pedro (encargado de piso).",
+        en: "Demo with made-up people and cases; it resets on reload. Sign in with a sample account, for example Ana (admin) or Pedro (floor lead)."
       },
       shots: [
         { src: "img/comite/muro.jpg", es: "Muro con reunión, avisos y problemas", en: "Wall with meeting, announcements and issues" },
+        { src: "img/comite/agenda.jpg", es: "Agenda con propuestas de fecha por revisar", en: "Calendar with date proposals to review" },
+        { src: "img/comite/propuestas.jpg", es: "Propuestas de fecha: agendadas y rechazadas con motivo", en: "Date proposals: scheduled and rejected with a reason" },
         { src: "img/comite/problema.jpg", es: "Problema con foto y seguimiento", en: "Issue with photo and follow-up" },
         { src: "img/comite/resumen.jpg", es: "Resumen con estadísticas por piso", en: "Summary with per-floor stats" },
-        { src: "img/comite/entrar.jpg", es: "Entrada con cuentas de ejemplo", en: "Sign-in with sample accounts" }
+        { src: "img/comite/integrantes.jpg", es: "Integrantes por piso y sesión iniciada", en: "Members by floor and stay-signed-in option" },
+        { src: "img/comite/entrar.jpg", es: "Entrada con cuentas de ejemplo y «Recuérdame»", en: "Sign-in with sample accounts and “Remember me”" }
       ]
     },
     {
@@ -618,6 +684,61 @@ window.PORTFOLIO = {
       ]
     },
     {
+      id: "mimo",
+      name: "Mimo",
+      color: "#ff5e8a",
+      device: "phone",
+      demo: "demos/mimo/index.html",
+      cover: ["img/mimo/gustos.jpg", "img/mimo/inicio.jpg", "img/mimo/fechas.jpg"],
+      tag: { es: "App móvil · Mascota virtual para parejas", en: "Mobile app · Virtual pet for couples" },
+      status: { es: "Demo jugable", en: "Playable demo" },
+      statusKind: "live",
+      extraBadge: { es: "En desarrollo · para Google Play", en: "In development · for Google Play" },
+      pitch: {
+        es: "Convierte a tu pareja en tu mascota virtual: guarda lo que le gusta, no olvides sus fechas importantes y aprende algo nuevo de tu pareja cada día.",
+        en: "Turn your partner into your virtual pet: save what they like, never forget their important dates and learn something new about them every day."
+      },
+      features: {
+        es: [
+          "Once animales y doce pelajes para elegir el que más te recuerda a tu pareja, con accesorios que se desbloquean por nivel.",
+          "Pregunta del día: 85 preguntas para conocerle mejor y una lista de lo que te queda por averiguar.",
+          "Dieciséis categorías para anotar gustos, tallas, alergias, sueños y lo que no le gusta, con buscador y favoritos.",
+          "Fechas importantes: cumpleaños, aniversario, mesiversario y fechas propias, con cuenta regresiva e ideas de regalo.",
+          "Cariño que baja con el tiempo y nueve niveles según cuánto le conoces; la mascota nunca muere.",
+          "Avisos antes de cada fecha y respaldo de todo en un archivo.",
+          "Todo queda guardado solo en el teléfono: sin cuentas ni servidores."
+        ],
+        en: [
+          "Eleven animals and twelve coats to pick the one that reminds you most of your partner, with accessories unlocked by level.",
+          "Question of the day: 85 questions to get to know them better and a list of things you still need to find out.",
+          "Sixteen categories to note their likes, sizes, allergies, dreams and dislikes, with search and favorites.",
+          "Important dates: birthday, anniversary, monthly anniversary and custom dates, with countdowns and gift ideas.",
+          "Affection that drops over time and nine levels based on how well you know them; the pet never dies.",
+          "Reminders before each date and a full backup to a file.",
+          "Everything stays on the phone only: no accounts, no servers."
+        ]
+      },
+      stack: ["Flutter", "Dart", "CustomPainter", "flutter_local_notifications", "Android", "Web"],
+      stats: [
+        { value: "85", es: "preguntas del día", en: "daily questions" },
+        { value: "16", es: "categorías de gustos", en: "categories of likes" },
+        { value: "58", es: "pruebas automáticas", en: "automated tests" }
+      ],
+      note: {
+        es: "La demo guarda lo que anotes solo en este navegador. «Mimo» es un nombre provisorio y todo el arte está dibujado con código.",
+        en: "The demo saves what you write only in this browser. “Mimo” is a working title and all the art is drawn with code."
+      },
+      shots: [
+        { src: "img/mimo/inicio.jpg", es: "Inicio con la pregunta del día respondida", en: "Home after answering the question of the day" },
+        { src: "img/mimo/fechas.jpg", es: "Fechas importantes e ideas de regalo", en: "Important dates and gift ideas" },
+        { src: "img/mimo/gustos.jpg", es: "Gustos por categoría y favoritos", en: "Likes by category and favorites" },
+        { src: "img/mimo/anotar.jpg", es: "Anotar algo nuevo en una de 16 categorías", en: "Noting something new in one of 16 categories" },
+        { src: "img/mimo/apariencia.jpg", es: "Animal, pelaje y accesorios por nivel", en: "Animal, coat and accessories by level" },
+        { src: "img/mimo/elegir.jpg", es: "Elegir el animal que te recuerda a tu pareja", en: "Picking the animal that reminds you of your partner" },
+        { src: "img/mimo/bienvenida.jpg", es: "Bienvenida", en: "Welcome screen" }
+      ]
+    },
+    {
       id: "straypets",
       name: "Stray Pets",
       color: "#ff8fb1",
@@ -638,7 +759,8 @@ window.PORTFOLIO = {
           "Cinco necesidades que bajan aunque la app esté cerrada: al abrirla se simula minuto a minuto lo que pasó.",
           "Etapas de crecimiento: Bebé, Trainee, Debut, Idol y Leyenda.",
           "Tienda con comida, camas, decoración y ropa; la pieza se ensucia sola.",
-          "Minijuegos, baño con espuma y una segunda mascota que conversa, juega y a veces pelea.",
+          "Con la app abierta tienen vida propia: pasean, juegan con pelota, túnel y trampolín, y se pueden arrastrar con el dedo.",
+          "Minijuegos, baño con espuma y una segunda mascota que conversa, juega, pelea y hace las paces.",
           "Todo el arte está dibujado con código, sin imágenes externas."
         ],
         en: [
@@ -646,7 +768,8 @@ window.PORTFOLIO = {
           "Five needs that keep dropping while the app is closed: on launch, every minute that passed is simulated.",
           "Growth stages: Baby, Trainee, Debut, Idol and Legend.",
           "A shop with food, beds, decor and clothes; the room gets messy on its own.",
-          "Mini-games, a foam bath and a second pet that chats, plays and sometimes fights.",
+          "With the app open they have a life of their own: they wander, play with a ball, tunnel and trampoline, and can be dragged around.",
+          "Mini-games, a foam bath and a second pet that chats, plays, fights and makes up.",
           "All the art is drawn with code, no external images."
         ]
       },
