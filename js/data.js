@@ -72,7 +72,7 @@ window.PORTFOLIO = {
       "xp.rewards": "Recompensas",
       "xp.present": "Actualidad",
       "proj.title": "SELECCIÓN DE NIVEL",
-      "proj.sub": "Apps y juegos que diseñé y programé. Cuatro se pueden jugar aquí mismo.",
+      "proj.sub": "Apps y juegos que diseñé y programé. Cinco se pueden jugar aquí mismo.",
       "proj.play": "JUGAR DEMO",
       "proj.gallery": "VER CAPTURAS",
       "proj.level": "NIVEL",
@@ -176,7 +176,7 @@ window.PORTFOLIO = {
       "xp.rewards": "Rewards",
       "xp.present": "Present",
       "proj.title": "LEVEL SELECT",
-      "proj.sub": "Apps and games I designed and built. Four of them are playable right here.",
+      "proj.sub": "Apps and games I designed and built. Five of them are playable right here.",
       "proj.play": "PLAY DEMO",
       "proj.gallery": "SEE SCREENSHOTS",
       "proj.level": "LEVEL",
@@ -465,10 +465,12 @@ window.PORTFOLIO = {
       name: "MigoFit",
       color: "#ffd600",
       device: "phone",
+      demo: "demos/migofit/index.html",
       cover: ["img/migofit/inicio.jpg", "img/migofit/habitacion.jpg", "img/migofit/ejercicio.jpg"],
       tag: { es: "App móvil · Fitness con mascota virtual", en: "Mobile app · Fitness with a virtual pet" },
       status: { es: "Próximamente en Google Play", en: "Coming soon to Google Play" },
       statusKind: "soon",
+      extraBadge: { es: "Demo jugable", en: "Playable demo" },
       pitch: {
         es: "Entrena con rutinas por deporte o por dolencia y cuida a Migo, tu mascota virtual: cada rutina completada da experiencia y PetCoins.",
         en: "Train with routines by sport or by ailment and look after Migo, your virtual pet: every finished routine earns XP and PetCoins."
@@ -504,15 +506,20 @@ window.PORTFOLIO = {
         { value: "205", es: "pruebas automáticas", en: "automated tests" }
       ],
       note: {
-        es: "Funciona con Firebase y datos reales de usuarios, por eso aquí se muestra con capturas tomadas en el emulador de Android.",
-        en: "It runs on Firebase with real user data, so it's shown here through screenshots taken on the Android emulator."
+        es: "Demo sin conexión con una cuenta de ejemplo: lo que hagas queda solo en este navegador. Entra con cualquiera de los dos botones; ninguno pide datos.",
+        en: "Offline demo with a sample account: whatever you do stays in this browser only. Sign in with either button; neither asks for any data."
       },
       shots: [
-        { src: "img/migofit/inicio.jpg", es: "Inicio con el tutorial guiado", en: "Home screen with the guided tutorial" },
+        { src: "img/migofit/inicio.jpg", es: "Inicio con ánimo, racha y día completo", en: "Home with mood, streak and complete day" },
+        { src: "img/migofit/rutinas.jpg", es: "Rutinas activas por deporte y por dolencia", en: "Active routines by sport and by ailment" },
         { src: "img/migofit/ejercicio.jpg", es: "Ejercicio ilustrado con sus series", en: "Illustrated exercise and its sets" },
         { src: "img/migofit/descanso.jpg", es: "Descanso cronometrado entre series", en: "Timed rest between sets" },
         { src: "img/migofit/recompensa.jpg", es: "Recompensa al terminar la rutina", en: "Reward after finishing a routine" },
-        { src: "img/migofit/habitacion.jpg", es: "La habitación de Migo", en: "Migo's room" },
+        { src: "img/migofit/habitacion.jpg", es: "La habitación viva de la mascota", en: "The pet's living room" },
+        { src: "img/migofit/tienda.jpg", es: "Tienda de mascotas", en: "Pet shop" },
+        { src: "img/migofit/desbloqueos.jpg", es: "Todo se desbloquea jugando", en: "Everything unlocks by playing" },
+        { src: "img/migofit/logros.jpg", es: "21 logros", en: "21 achievements" },
+        { src: "img/migofit/compartir.jpg", es: "Logros para compartir como imagen", en: "Achievements shareable as images" },
         { src: "img/migofit/regalo.jpg", es: "Regalo diario", en: "Daily gift" },
         { src: "img/migofit/minijuego.jpg", es: "Minijuego: Atrapa la Fruta", en: "Mini-game: Catch the Fruit" },
         { src: "img/migofit/bienvenida.jpg", es: "Pantalla de bienvenida", en: "Welcome screen" }
