@@ -19,7 +19,6 @@ editar ese archivo: la página se arma sola.
 | CV descargable (sin la dirección) | `cv/` |
 | Certificados (imágenes con el RUT tapado) | `img/certs/` y la lista `certs` en `js/data.js` |
 | Demos jugables (builds web de Flutter) | `demos/condominio/`, `demos/comite/`, `demos/mimo/`, `demos/stray-pets/` |
-| APK descargables | GitHub Releases, etiqueta `apks`; cada proyecto las lista en `apk` dentro de `js/data.js` |
 | Estilos | `css/style.css` |
 | Fondo animado (Valparaíso en pixel art) | `js/scene.js` |
 
@@ -30,18 +29,6 @@ editar ese archivo: la página se arma sola.
 3. En `demos/<nombre>/index.html`, dejar `<base href="/demos/<nombre>/">`.
 4. Al final de `flutter_bootstrap.js`, cargar CanvasKit desde la propia carpeta:
    `_flutter.loader.load({ config: { canvasKitBaseUrl: "canvaskit/" } });`
-
-## Actualizar una APK
-
-Las APK no van en el repositorio: GitHub no acepta archivos de más de 100 MB y
-Pages no está pensado para esas descargas. Viven en el release `apks`.
-
-1. Subir el archivo nuevo:
-   `gh release upload apks <archivo.apk> --repo javiermirandat-ing/javiermirandat-ing.github.io --clobber`
-2. En `js/data.js`, actualizar `file`, `version`, `size` y `req` en el `apk` del
-   proyecto.
-3. Si cambió el nombre del archivo, borrar el antiguo:
-   `gh release delete-asset apks <archivo-antiguo.apk> --repo javiermirandat-ing/javiermirandat-ing.github.io`
 
 ## Detalles
 
