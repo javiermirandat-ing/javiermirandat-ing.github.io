@@ -344,6 +344,9 @@
         ? '<button class="btn" type="button" data-open="' + p.id + '" data-mode="demo">' + icon("right") + px(t("proj.play")) + "</button>" +
           '<button class="btn btn-ghost" type="button" data-open="' + p.id + '" data-mode="gallery">' + icon("image") + px(t("proj.gallery")) + "</button>"
         : '<button class="btn" type="button" data-open="' + p.id + '" data-mode="gallery">' + icon("image") + px(t("proj.gallery")) + "</button>";
+      if (p.apk) {
+        actions += '<a class="btn btn-ghost btn-apk" href="' + esc(apkURL(p)) + '" title="' + esc(t("proj.apkDownload") + " · " + p.apk.version + " · " + p.apk.size + " · " + p.apk.req) + '">' + icon("download") + "APK</a>";
+      }
       return '<article class="win level' + (p.bonus ? " bonus" : "") + '" style="--c:' + p.color + ";--cg:" + rgba(p.color, 0.42) + '">' +
         '<div class="level-cover" data-open="' + p.id + '" role="presentation">' +
         '<span class="status ' + p.statusKind + '">' + px(L(p.status)) + "</span>" +
@@ -620,6 +623,17 @@
       '<div class="thumbs">' + dots + "</div>";
   }
 
+  function apkURL(p) { return D.contact.apkBase + p.apk.file; }
+
+  function apkBlock(p) {
+    if (!p.apk) return "";
+    return '<div class="info-block"><h3>' + px(t("proj.apkTitle")) + "</h3>" +
+      '<a class="btn" href="' + esc(apkURL(p)) + '">' + icon("download") + px(t("proj.apkDownload")) + "</a>" +
+      '<p class="apk-meta">' + esc(p.apk.version + " · " + p.apk.size + " · " + p.apk.req) + "</p>" +
+      (p.apk.note ? '<p class="apk-note"><b>' + esc(L(p.apk.note)) + "</b></p>" : "") +
+      '<p class="apk-note">' + esc(t("proj.apkHint")) + "</p></div>";
+  }
+
   function renderModal() {
     var st = state.modal;
     if (!st) return;
@@ -638,6 +652,7 @@
       '<div class="info-block"><h3>' + px(t("proj.features")) + '</h3><ul class="features">' + feats + "</ul></div>" +
       '<div class="info-block"><h3>' + px(t("proj.stack")) + '</h3><ul class="chips">' + p.stack.map(function (s) { return '<li class="chip">' + esc(s) + "</li>"; }).join("") + "</ul></div>" +
       '<div class="info-block"><h3>' + px(t("proj.stats")) + '</h3><div class="mini-stats">' + stats + "</div></div>" +
+      apkBlock(p) +
       '<p class="note">' + esc(L(p.note)) + "</p>" +
       "</div></div></div>";
     qs("#modal").innerHTML = html;

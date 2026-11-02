@@ -7,6 +7,8 @@ window.PORTFOLIO = {
     phoneLabel: "+56 9 6168 6938",
     whatsapp: "https://wa.me/56961686938",
     github: "https://github.com/javiermirandat-ing",
+    // Las APK viven en GitHub Releases (GitHub no acepta archivos de más de 100 MB en el repositorio).
+    apkBase: "https://github.com/javiermirandat-ing/javiermirandat-ing.github.io/releases/download/apks/",
     // Los dos CV están en español: el más reciente (sin foto) y la versión con foto.
     cv: { main: "cv/Javier-Miranda-CV.pdf", photo: "cv/Javier-Miranda-CV-con-foto.pdf" }
   },
@@ -72,7 +74,7 @@ window.PORTFOLIO = {
       "xp.rewards": "Recompensas",
       "xp.present": "Actualidad",
       "proj.title": "SELECCIÓN DE NIVEL",
-      "proj.sub": "Apps y juegos que diseñé y programé. Cuatro se pueden jugar aquí mismo.",
+      "proj.sub": "Apps y juegos que diseñé y programé. Cuatro se juegan aquí mismo y seis se pueden instalar en Android.",
       "proj.play": "JUGAR DEMO",
       "proj.gallery": "VER CAPTURAS",
       "proj.level": "NIVEL",
@@ -86,6 +88,9 @@ window.PORTFOLIO = {
       "proj.close": "Cerrar",
       "proj.prev": "Anterior",
       "proj.next": "Siguiente",
+      "proj.apkTitle": "INSTALAR EN ANDROID",
+      "proj.apkDownload": "Descargar APK",
+      "proj.apkHint": "Se instala fuera de Google Play: el teléfono te pedirá permitir apps de esta fuente.",
       "proj.demoTab": "Demo jugable",
       "proj.shotsTab": "Capturas",
       "proj.hobbyLabel": "Hobby:",
@@ -176,7 +181,7 @@ window.PORTFOLIO = {
       "xp.rewards": "Rewards",
       "xp.present": "Present",
       "proj.title": "LEVEL SELECT",
-      "proj.sub": "Apps and games I designed and built. Four of them are playable right here.",
+      "proj.sub": "Apps and games I designed and built. Four are playable right here and six can be installed on Android.",
       "proj.play": "PLAY DEMO",
       "proj.gallery": "SEE SCREENSHOTS",
       "proj.level": "LEVEL",
@@ -190,6 +195,9 @@ window.PORTFOLIO = {
       "proj.close": "Close",
       "proj.prev": "Previous",
       "proj.next": "Next",
+      "proj.apkTitle": "INSTALL ON ANDROID",
+      "proj.apkDownload": "Download APK",
+      "proj.apkHint": "It installs outside Google Play: your phone will ask you to allow apps from this source.",
       "proj.demoTab": "Playable demo",
       "proj.shotsTab": "Screenshots",
       "proj.hobbyLabel": "Hobby:",
@@ -525,6 +533,7 @@ window.PORTFOLIO = {
       device: "phone",
       demo: "demos/condominio/index.html",
       cover: ["img/condominio/desglose.jpg", "img/condominio/inicio.jpg", "img/condominio/finanzas.jpg"],
+      apk: { file: "condominio-demo-v0.2.0.apk", version: "v0.2.0", size: "65 MB", req: "Android 7+", note: { es: "Versión de demostración: datos inventados y sin conexión a la nube.", en: "Demo build: made-up data and no cloud connection." } },
       tag: { es: "App de administración de condominios", en: "Condominium management app" },
       status: { es: "Demo jugable", en: "Playable demo" },
       statusKind: "live",
@@ -581,6 +590,7 @@ window.PORTFOLIO = {
       device: "phone",
       demo: "demos/comite/index.html",
       cover: ["img/comite/agenda.jpg", "img/comite/muro.jpg", "img/comite/resumen.jpg"],
+      apk: { file: "comite-paritario-demo-v0.3.0.apk", version: "v0.3.0", size: "64 MB", req: "Android 7+", note: { es: "Versión de demostración: datos inventados y sin conexión a la nube.", en: "Demo build: made-up data and no cloud connection." } },
       tag: { es: "App de gestión para comunidades", en: "Community management app" },
       status: { es: "Demo jugable", en: "Playable demo" },
       statusKind: "live",
@@ -638,6 +648,7 @@ window.PORTFOLIO = {
       color: "#b39dff",
       device: "phone",
       cover: ["img/pastillero/receta.jpg", "img/pastillero/hoy.jpg", "img/pastillero/alarma.jpg"],
+      apk: { file: "pastillero-prototipo-v0.21.apk", version: "v0.21", size: "25 MB", req: "Android 8+", note: { es: "Prototipo en pruebas: no lo uses como único recordatorio de un tratamiento real.", en: "Prototype in testing: do not use it as the only reminder for a real treatment." } },
       tag: { es: "App nativa Android · Salud", en: "Native Android app · Health" },
       status: { es: "Prototipo en pruebas", en: "Prototype in testing" },
       statusKind: "proto",
@@ -689,7 +700,8 @@ window.PORTFOLIO = {
       color: "#ff5e8a",
       device: "phone",
       demo: "demos/mimo/index.html",
-      cover: ["img/mimo/gustos.jpg", "img/mimo/inicio.jpg", "img/mimo/fechas.jpg"],
+      cover: ["img/mimo/gustos.jpg", "img/mimo/inicio.jpg", "img/mimo/tienda.jpg"],
+      apk: { file: "mimo-v0.2.0-build4.apk", version: "v0.2.0", size: "38 MB", req: "Android 7+ · 64 bits" },
       tag: { es: "App móvil · Mascota virtual para parejas", en: "Mobile app · Virtual pet for couples" },
       status: { es: "Demo jugable", en: "Playable demo" },
       statusKind: "live",
@@ -700,42 +712,46 @@ window.PORTFOLIO = {
       },
       features: {
         es: [
-          "Once animales y doce pelajes para elegir el que más te recuerda a tu pareja, con accesorios que se desbloquean por nivel.",
+          "Once animales y doce pelajes para elegir el que más te recuerda a tu pareja, con accesorios que se ganan.",
           "Pregunta del día: 85 preguntas para conocerle mejor y una lista de lo que te queda por averiguar.",
-          "Dieciséis categorías para anotar gustos, tallas, alergias, sueños y lo que no le gusta, con buscador y favoritos.",
-          "Fechas importantes: cumpleaños, aniversario, mesiversario y fechas propias, con cuenta regresiva e ideas de regalo.",
-          "Cariño que baja con el tiempo y nueve niveles según cuánto le conoces; la mascota nunca muere.",
-          "Avisos antes de cada fecha y respaldo de todo en un archivo.",
-          "Todo queda guardado solo en el teléfono: sin cuentas ni servidores."
+          "Dieciséis categorías para anotar gustos, tallas, alergias y sueños, con buscador, favoritos y medallas.",
+          "Premios por anotar: corazones, niveles, rachas y 27 logros.",
+          "Tienda con rincones, decoración y accesorios para tu mascota.",
+          "Repaso con tarjetas espaciadas para que no se te olvide lo que anotas.",
+          "Fechas importantes con cuenta regresiva, ideas de regalo, planificador de citas y álbum de momentos.",
+          "Avisos antes de cada fecha, respaldo en un archivo y todo guardado solo en el teléfono: sin cuentas ni servidores."
         ],
         en: [
-          "Eleven animals and twelve coats to pick the one that reminds you most of your partner, with accessories unlocked by level.",
+          "Eleven animals and twelve coats to pick the one that reminds you most of your partner, with accessories to earn.",
           "Question of the day: 85 questions to get to know them better and a list of things you still need to find out.",
-          "Sixteen categories to note their likes, sizes, allergies, dreams and dislikes, with search and favorites.",
-          "Important dates: birthday, anniversary, monthly anniversary and custom dates, with countdowns and gift ideas.",
-          "Affection that drops over time and nine levels based on how well you know them; the pet never dies.",
-          "Reminders before each date and a full backup to a file.",
-          "Everything stays on the phone only: no accounts, no servers."
+          "Sixteen categories to note their likes, sizes, allergies and dreams, with search, favorites and medals.",
+          "Rewards for taking notes: hearts, levels, streaks and 27 achievements.",
+          "A shop with corners, decor and accessories for your pet.",
+          "Spaced flashcard review so you don't forget what you wrote down.",
+          "Important dates with countdowns, gift ideas, a date planner and a moments album.",
+          "Reminders before each date, backup to a file and everything stored only on the phone: no accounts, no servers."
         ]
       },
       stack: ["Flutter", "Dart", "CustomPainter", "flutter_local_notifications", "Android", "Web"],
       stats: [
         { value: "85", es: "preguntas del día", en: "daily questions" },
-        { value: "16", es: "categorías de gustos", en: "categories of likes" },
-        { value: "58", es: "pruebas automáticas", en: "automated tests" }
+        { value: "27", es: "logros", en: "achievements" },
+        { value: "84", es: "pruebas automáticas", en: "automated tests" }
       ],
       note: {
         es: "La demo guarda lo que anotes solo en este navegador. «Mimo» es un nombre provisorio y todo el arte está dibujado con código.",
         en: "The demo saves what you write only in this browser. “Mimo” is a working title and all the art is drawn with code."
       },
       shots: [
-        { src: "img/mimo/inicio.jpg", es: "Inicio con la pregunta del día respondida", en: "Home after answering the question of the day" },
+        { src: "img/mimo/inicio.jpg", es: "Inicio con un rincón de la tienda", en: "Home with a corner from the shop" },
+        { src: "img/mimo/nivel.jpg", es: "Premios al subir de nivel", en: "Rewards for leveling up" },
+        { src: "img/mimo/tienda.jpg", es: "Tienda: rincones, decoración y accesorios", en: "Shop: corners, decor and accessories" },
+        { src: "img/mimo/logros.jpg", es: "27 logros por conocer a tu pareja", en: "27 achievements for getting to know your partner" },
         { src: "img/mimo/fechas.jpg", es: "Fechas importantes e ideas de regalo", en: "Important dates and gift ideas" },
-        { src: "img/mimo/gustos.jpg", es: "Gustos por categoría y favoritos", en: "Likes by category and favorites" },
+        { src: "img/mimo/gustos.jpg", es: "Gustos por categoría, favoritos y medallas", en: "Likes by category, favorites and medals" },
         { src: "img/mimo/anotar.jpg", es: "Anotar algo nuevo en una de 16 categorías", en: "Noting something new in one of 16 categories" },
-        { src: "img/mimo/apariencia.jpg", es: "Animal, pelaje y accesorios por nivel", en: "Animal, coat and accessories by level" },
-        { src: "img/mimo/elegir.jpg", es: "Elegir el animal que te recuerda a tu pareja", en: "Picking the animal that reminds you of your partner" },
-        { src: "img/mimo/bienvenida.jpg", es: "Bienvenida", en: "Welcome screen" }
+        { src: "img/mimo/apariencia.jpg", es: "Animal, pelaje y accesorios", en: "Animal, coat and accessories" },
+        { src: "img/mimo/elegir.jpg", es: "Elegir el animal que te recuerda a tu pareja", en: "Picking the animal that reminds you of your partner" }
       ]
     },
     {
@@ -745,6 +761,7 @@ window.PORTFOLIO = {
       device: "phone",
       demo: "demos/stray-pets/index.html",
       cover: ["img/stray/tienda.jpg", "img/stray/casa.jpg", "img/stray/comer.jpg"],
+      apk: { file: "stray-pets-v0.3.0-build5.apk", version: "v0.3.0", size: "35 MB", req: "Android 7+ · 64 bits" },
       tag: { es: "Juego móvil · Mascota virtual", en: "Mobile game · Virtual pet" },
       status: { es: "Demo jugable", en: "Playable demo" },
       statusKind: "live",
@@ -796,6 +813,7 @@ window.PORTFOLIO = {
       device: "landscape",
       bonus: true,
       cover: ["img/shard/menu_principal.jpg"],
+      apk: { file: "shard-casters-v0.1.0-build4.apk", version: "v0.1.0", size: "284 MB", req: "Android 7+ · 64 bits", note: { es: "Pesa bastante: mejor descárgala con Wi-Fi.", en: "It's a big download: better use Wi-Fi." } },
       tag: { es: "Videojuego · RPG táctico por turnos", en: "Video game · Turn-based tactical RPG" },
       status: { es: "Proyecto hobby", en: "Hobby project" },
       statusKind: "hobby",

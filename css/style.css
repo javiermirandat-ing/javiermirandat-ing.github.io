@@ -1214,6 +1214,14 @@ body.in-app .veil { opacity: 1; }
 
 .mini-stats .stat b { font-size: 40px; }
 
+.apk-meta { margin: 10px 0 6px; font: 18px/1.2 var(--vt); color: var(--cyan); }
+
+.apk-note { margin: 0 0 4px; font-size: 14px; line-height: 1.4; color: var(--muted); }
+
+.apk-note b { color: var(--ink-2); }
+
+.btn-apk { padding-left: 14px; padding-right: 14px; }
+
 .note {
   margin-top: 20px;
   padding: 12px 14px;
